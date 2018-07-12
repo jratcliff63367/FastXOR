@@ -47,6 +47,10 @@ void fastXOR(void *data, uint32_t dataLen, uint8_t key[4])
 		if (skipBytes)
 		{
 			skipBytes = 8 - skipBytes;
+			if (skipBytes > dataLen)
+			{
+				skipBytes = dataLen;
+			}
 #if DEBUG_PRINT
 			printf("Skipping the first %d bytes to make sure we are 8 byte aligned.\r\n", skipBytes);
 #endif

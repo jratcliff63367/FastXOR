@@ -76,6 +76,7 @@ endif()
 
 file (GLOB_RECURSE fastxor_EXTERNAL_SOURCES
     RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
+    *.h
 )
 
 set(Shared_SOURCES

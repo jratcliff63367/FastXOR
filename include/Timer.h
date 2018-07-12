@@ -1,9 +1,9 @@
-#ifndef NV_ISAAC_UTIL_TIMER_H
-#define NV_ISAAC_UTIL_TIMER_H
+#pragma  once
 
 #include <chrono>
 
-namespace NvIsaac {
+namespace timer 
+{
 
 class Timer
 {
@@ -35,6 +35,13 @@ private:
 	std::chrono::time_point<std::chrono::high_resolution_clock> mStartTime;
 };
 
+// uses the high resolution timer to approximate a random number.
+uint64_t getRandomTime(void)
+{
+	uint64_t seed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
+	return seed;
 }
 
-#endif
+}
+
+
